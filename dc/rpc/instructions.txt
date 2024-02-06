@@ -1,0 +1,43 @@
+(1) Install rpcbind in your machine
+
+sudo apt-get install rpcbind
+
+(2) rpcinfo
+
+(3) rpcgen -a -C add.x
+
+(4) make -f Makefile.add
+
+(5) To start server --> :-$ sudo ./add_server
+
+To start client --> :-$ sudo ./add_client localhost 5 8
+
+add.x:
+
+numbers -> name of the structure which sends the
+parameters to the server
+
+ADD_PROG -> name of the program
+
+ADD_VERS -> name of the program version
+
+add(numbers) -> method that we are going to call
+remotely. We pass the numbers structure as the parameter
+to this method.
+
+
+It will generate the following files.
+
+add.h -> header file
+
+add_client.c -> client program
+
+add_clnt.c -> client stub
+
+add_server.c -> server program
+
+add_svc.c -> server skeleton
+
+add_xdr.c -> XDR routines used by both the client and the server
+
+Makefile.add -> Makefile 
